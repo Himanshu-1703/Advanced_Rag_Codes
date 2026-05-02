@@ -1,0 +1,18 @@
+[project]
+name = "graph-rag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fpdf2>=2.8.7",
+    "ipykernel>=7.2.0",
+    "langchain>=1.2.15",
+    "langchain-community>=0.4.1",
+    "langchain-experimental>=0.4.1",
+    "langchain-neo4j>=0.9.0",
+    "langchain-openai>=1.2.1",
+    "pypdf>=6.10.2",
+    "python-dotenv>=1.2.2",
+    "reportlab>=4.4.10",
+]

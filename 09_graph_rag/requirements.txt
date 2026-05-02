@@ -1,0 +1,9 @@
+langchain
+langchain-openai
+langchain-neo4j
+langchain-community
+langchain-experimental
+pypdf
+python-dotenv
+ipykernel
+fpdf2
