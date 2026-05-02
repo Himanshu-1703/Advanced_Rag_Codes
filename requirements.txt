@@ -1,0 +1,10 @@
+langchain
+langchain-core
+langchain-openai
+langchain-text-splitters
+langchain-community
+python-dotenv
+ollama
+langchain-ollama
+ipykernel
+pypdf
