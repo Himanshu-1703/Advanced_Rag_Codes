@@ -1,0 +1,372 @@
+[
+  {
+    "input": "Which LLM backends does Moltbot support, and how can users switch providers seamlessly?",
+    "actual_output": "Moltbot supports multiple LLM backends, including:\n\n- Anthropic Claude (Sonnet, Opus)\n- OpenAI GPT-4 and GPT-4 Turbo\n- Google Gemini\n- Local models via Ollama\n- Local models via LM Studio\n- AWS Bedrock integration\n\nUsers can switch between these providers without reconfiguring the whole setup. In practice, this means Moltbot is model-agnostic: you can change the active backend while keeping the same overall configuration, which makes it easy to optimize for cost, quality, or specific capabilities.",
+    "success": false,
+    "metrics": [
+      {
+        "name": "Contextual Precision",
+        "score": 0.8333333333333333,
+        "passed": true,
+        "reason": "The score is 0.83 because the most relevant information appears early: node 1 and node 3 in the retrieval contexts both directly answer the question by saying \"Moltbot is a model-agnostic platform supporting multiple LLM backends\" and that users can switch providers \"without reconfiguring the entire setup.\" The score is not higher because node 2, node 4, and node 5 in the retrieval contexts are irrelevant passages about gateway architecture, costs, and risks, so they should have been ranked lower than the relevant nodes. It is still fairly high because the relevant nodes are ranked above the irrelevant ones overall, but the interleaved irrelevant nodes reduce perfect precision."
+      },
+      {
+        "name": "Contextual Recall",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because sentence 1 is fully supported by node 1 in retrieval context, which explicitly says Moltbot is model-agnostic and lists Anthropic Claude, OpenAI GPT-4/GPT-4 Turbo, Google Gemini, Ollama, LM Studio, and AWS Bedrock; sentence 2 is also supported by node 1, which says users can switch providers without reconfiguring the setup, keeping it flexible for cost or capability needs."
+      },
+      {
+        "name": "Contextual Relevancy",
+        "score": 0.09375,
+        "passed": false,
+        "reason": "The score is 0.09 because most of the retrieval context is unrelated, such as \"Gateway control plane design\", \"Chrome/Chromium instance\", and \"messaging platform integration\". Only a small portion directly answers the question: \"Moltbot operates as a model-agnostic platform supporting multiple LLM backends\" and \"Users can switch between providers without reconfiguring the entire setup\"."
+      },
+      {
+        "name": "Answer Relevancy",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because the response stayed fully focused on Moltbot’s supported LLM backends and seamless provider switching, with no irrelevant content. It directly addressed the user’s question clearly and completely."
+      },
+      {
+        "name": "Faithfulness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because there are no contradictions, so the actual output appears fully aligned with the retrieval context. Great job!"
+      }
+    ]
+  },
+  {
+    "input": "List Moltbot's cross-session memory types and infer how they enable stateful collaboration.",
+    "actual_output": "Moltbot’s cross-session memory types include:\n\n- Previous conversations and interaction history  \n- User preferences and working patterns  \n- Ongoing project context and state  \n- Custom instructions and behavioral guidelines  \n- File locations and system configurations  \n\nHow this enables stateful collaboration:\n\n- It lets Moltbot remember what happened in earlier sessions, so users don’t have to restate context every time.\n- It can adapt to a user’s habits and preferences, making interactions more personalized and efficient.\n- It can continue work across days or weeks by retaining project state, which supports long-running tasks and collaboration.\n- It follows custom instructions consistently, so behavior stays aligned with the user’s expectations.\n- It remembers technical details like files and configurations, allowing it to resume work accurately and act more like a persistent collaborator than a stateless chatbot.\n\nIn short, this memory turns Moltbot from a session-by-session assistant into a stateful partner that can maintain continuity over time.",
+    "success": false,
+    "metrics": [
+      {
+        "name": "Contextual Precision",
+        "score": 0.95,
+        "passed": true,
+        "reason": "The score is 0.95 because the relevant nodes in retrieval contexts are ranked almost perfectly ahead of the irrelevant one. Nodes 1, 2, 3, and 5 support the answer with phrases like \"Previous conversations and interaction history,\" \"Moltbot maintains long-term memory across sessions,\" \"enables context retention that spans days or weeks,\" and \"Configuration files in ~/.moltbot/config/\". The only irrelevant node is node 4, which focuses on \"Context Retention vs Privacy Concerns\" and user discomfort, so it should be ranked lower than the helpful nodes; however, because it appears after several highly relevant nodes rather than earlier, the score is very close to 1."
+      },
+      {
+        "name": "Contextual Recall",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because sentence 1 is fully supported by node 1 in retrieval context, which explicitly lists the same cross-session memory items, and sentence 2 is also supported by nodes 1 and 3 in retrieval context, which describe long-term memory across sessions and stateful collaboration. Great match overall."
+      },
+      {
+        "name": "Contextual Relevancy",
+        "score": 0.2692307692307692,
+        "passed": false,
+        "reason": "The score is 0.27 because most retrieved content is off-topic, including references like \"proactive capabilities,\" \"ClawdHub marketplace offers 565+ community-developed skills,\" and \"browser automation,\" which do not answer the request. However, a small portion is relevant, such as \"Persistent Memory Architecture,\" \"Previous conversations and interaction history,\" and \"Session Management: Maintains isolated sessions with context and history,\" plus \"This persistent memory transforms the interaction model from stateless question-answering to stateful collaboration.\""
+      },
+      {
+        "name": "Answer Relevancy",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because the response fully and directly addresses the request about Moltbot's cross-session memory types and their role in stateful collaboration, with no irrelevant statements to reduce relevance. Great focus and completeness."
+      },
+      {
+        "name": "Faithfulness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because there are no contradictions, so the actual output appears fully aligned with the retrieval context. Great job!"
+      }
+    ]
+  },
+  {
+    "input": "How do Moltbot's native 9+ channels and device-agnostic access improve everyday AI usability?",
+    "actual_output": "Moltbot’s native multi-channel access and device-agnostic design make it much more usable in everyday life because users can talk to the assistant through the apps they already use, instead of switching to a separate AI website or interface.\n\nKey benefits:\n- Access from 9+ familiar channels: WhatsApp, Telegram, Discord, Slack, Signal, iMessage, Microsoft Teams, Matrix, WebChat, and mobile apps.\n- Works on any device: users can continue conversations from phone, desktop, or tablet without changing workflows.\n- Lower friction: no need to learn a new platform or open a dedicated AI app.\n- More natural daily use: it fits into existing communication habits, making AI assistance feel like part of normal messaging.\n- Better continuity: users can start a task on one device and finish it on another.\n\nThe report’s example of someone “building an entire website from phone via Telegram” shows how this flexibility turns Moltbot into an always-available assistant rather than a tool tied to one screen or one app.",
+    "success": false,
+    "metrics": [
+      {
+        "name": "Contextual Precision",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because the relevant nodes in retrieval contexts are ranked before the irrelevant one: nodes 1-4 all directly support the question, with phrases like \"Supported Channels: WhatsApp ... Telegram, Discord, Slack, Signal, iMessage, Microsoft Teams, Matrix, WebChat, macOS/iOS/Android apps,\" \"enables users to interact with their AI assistant from any device, anywhere, using familiar interfaces,\" and \"Users interact through tools they already use daily rather than learning new interfaces.\" The irrelevant node 5 is correctly placed last since it is only a list of references and citations like \"AIMultiple,\" \"ByteIota,\" and \"DigitalOcean,\" without usable facts about channels or device-agnostic access. Since no irrelevant node appears above a relevant node, the ranking is already perfect."
+      },
+      {
+        "name": "Contextual Recall",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because node 1 in retrieval context fully supports sentence 1 with the listed messaging apps, device-agnostic access, and multi-channel use, and also supports sentence 2 with persistent memory plus the phone-via-Telegram website example; nothing is left unsupported."
+      },
+      {
+        "name": "Contextual Relevancy",
+        "score": 0.5,
+        "passed": false,
+        "reason": "The score is 0.50 because the context does explain the key usability angle, e.g. Moltbot “integrates natively with messaging platforms users already employ daily,” offers “Supported Channels: WhatsApp… Telegram… Discord… Slack… Signal… iMessage… Microsoft Teams… Matrix… WebChat, macOS/iOS/Android apps,” and lets users interact “from any device, anywhere, using familiar interfaces.” However, much of the retrieved material is off-topic, such as “The platform's proactive capabilities” and “viral GitHub growth and stars,” which do not directly answer how native 9+ channels and device-agnostic access improve everyday AI usability."
+      },
+      {
+        "name": "Answer Relevancy",
+        "score": 0.9090909090909091,
+        "passed": true,
+        "reason": "The score is 0.91 because the response is highly relevant overall and addresses how native channels and device-agnostic access improve usability, but it includes a specific anecdotal example about building a website from a phone via Telegram that is not necessary to answer the question. That extra detail lowers the score slightly, though most of the content remains on-topic and useful."
+      },
+      {
+        "name": "Faithfulness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because there are no contradictions, so the actual output appears fully aligned with the retrieval context. Great job!"
+      }
+    ]
+  },
+  {
+    "input": "Summarize Moltbot risks incl. plaintext secrets, auth gaps, public exposure, malicious skills, infostealers.",
+    "actual_output": "Moltbot poses several serious security risks:\n\n- **Plaintext secret storage:** It stores passwords, API keys, tokens, and certificates in plaintext JSON/Markdown under `~/.moltbot/`, with **no encryption at rest**. Any process or attacker with file access can extract them.\n- **Authentication and access-control gaps:** Reports note weak default authentication, lack of role-based access, long-lived sessions, and insecure localhost-trust assumptions. In some cases, admin dashboards were exposed with **no authentication**.\n- **Public internet exposure:** Security scans found hundreds of Moltbot instances exposed online, sometimes with admin ports open, allowing attackers to view chats, steal credentials, run commands, and impersonate users.\n- **Malicious skills / supply-chain risk:** The skills ecosystem can be abused because third-party skills run with full system access. Researchers demonstrated a malicious skill that reached #1 and was downloaded quickly, showing the risk of code execution, data exfiltration, and persistent backdoors.\n- **Infostealer targeting:** Commodity infostealers like RedLine, Lumma, and Vidar are actively targeting Moltbot installations because they can steal conversation history, cloud credentials, GitHub tokens, email/calendar access, and other high-value secrets.\n\nOverall, the report characterizes Moltbot as a high-risk platform because it combines broad system access with weak protections and a large attack surface.",
+    "success": true,
+    "metrics": [
+      {
+        "name": "Contextual Precision",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because the retrieval contexts are perfectly ordered: the first node in retrieval contexts already supports the plaintext secret risk with \"plaintext JSON and Markdown files within ~/.moltbot/\" and \"no encryption at rest,\" and the next nodes continue with highly relevant evidence about malicious skills, auth gaps, public exposure, and infostealer-style behavior. There are no irrelevant nodes placed above relevant ones, so the no-relevance cases that would normally need to be ranked lower do not appear ahead of the useful nodes."
+      },
+      {
+        "name": "Contextual Recall",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because every sentence in the expected output is fully supported by the retrieval context: sentence 1 by node 1, sentence 2 by node 2, sentence 3 by nodes in retrieval context 3 and 4, sentence 4 by node 4, and sentence 5 by nodes in retrieval context 2 and 3. Great match overall!"
+      },
+      {
+        "name": "Contextual Relevancy",
+        "score": 0.9743589743589743,
+        "passed": true,
+        "reason": "The score is 0.97 because the context is highly aligned with the request to summarize Moltbot risks, covering key issues like \"Plaintext Credential Storage,\" \"No Encryption at Rest,\" \"Exposed Admin Ports,\" \"The extensible skills ecosystem creates supply chain vulnerability,\" and \"Targeted by Infostealers.\" The only minor irrelevance is that \"9. Security Concerns in Detail\" is just a section heading and does not add substance, but the rest directly supports the requested risk summary."
+      },
+      {
+        "name": "Answer Relevancy",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because the response fully addressed the requested Moltbot risks—plaintext secrets, auth gaps, public exposure, malicious skills, and infostealers—without adding any irrelevant content. Clear, focused, and complete."
+      },
+      {
+        "name": "Faithfulness",
+        "score": 0.9375,
+        "passed": true,
+        "reason": "The score is 0.94 because the actual output introduces certificates as being stored by Moltbot, but the context only says it stores sensitive credentials like API keys, passwords, and authentication tokens in plaintext JSON and Markdown files under ~/.moltbot/ and does not mention certificates."
+      }
+    ]
+  },
+  {
+    "input": "Compare local vs VPS Moltbot tradeoffs: privacy, latency, uptime, cost, security, hardware access.",
+    "actual_output": "Here’s a concise comparison of **local vs VPS Moltbot deployment** based on the report:\n\n| Factor | Local Deployment | VPS Deployment |\n|---|---|---|\n| **Privacy** | **Best privacy**: all data stays on user-controlled hardware, with zero cloud provider access. Ideal for sensitive personal or business data. | **Lower privacy**: the VPS provider has theoretical access to data and credentials stored on the instance. |\n| **Latency** | **Lower latency**: runs directly on your device, avoiding network round-trips for file operations and system commands. | **Higher latency**: depends on network access to the remote server. |\n| **Uptime / Availability** | **Less reliable**: depends on your device staying powered on, connected, and healthy. Power or internet interruptions can disrupt service. | **Best uptime**: designed for 24/7 operation, with data center redundancy for power, networking, and environmental controls. |\n| **Cost** | **No hosting fee**: after the initial hardware purchase, there are no recurring monthly hosting costs beyond electricity. | **Recurring cost**: typically around **$5–24/month** for a VPS, plus API usage. |\n| **Security** | **More user-controlled, but physically exposed**: physical security matters, and malware or home network breaches can compromise credentials and access. | **Internet-exposed risks**: vulnerable to scanning/exploitation, and misconfigured reverse proxies can bypass authentication. |\n| **Hardware access** | **Full hardware access**: direct access to local devices, USB peripherals, and internal network resources. | **Limited hardware access**: cannot directly access your local peripherals or internal home network resources. |\n\n### Summary\n- **Choose local** if your priority is **maximum privacy, lower latency, and direct hardware access**.\n- **Choose VPS** if your priority is **reliability, 24/7 uptime, and easier remote access**.\n- The report recommends a **hybrid approach** as often optimal: use a **VPS for automation** and a **local instance for sensitive tasks**.",
+    "success": true,
+    "metrics": [
+      {
+        "name": "Contextual Precision",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because every node in retrieval contexts is relevant and the relevant information is ranked consistently at the top. The first node in retrieval contexts directly supports the comparison with \"VPS for automation\" and \"Local for sensitive tasks,\" and the next nodes reinforce the same tradeoffs with \"Maximum Privacy,\" \"Zero Hosting Costs,\" \"Lower Latency,\" \"Hardware Access,\" \"24/7 Availability,\" and \"Cost-Effectiveness.\" Since there are no irrelevant nodes ahead of the relevant ones, the ranking is already ideal, so it cannot be higher."
+      },
+      {
+        "name": "Contextual Recall",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because every sentence in the expected output is supported by the retrieval context: sentence 1 on local deployment maps to node(s) in retrieval context 1 for privacy, latency, cost, and hardware access; sentence 2 on VPS deployment maps to node(s) 3, 5, and 6 for automation, reliability, monthly cost, and security burden; and sentence 3 on the bottom line is reinforced by node(s) 3 and 5 for the local-vs-VPS recommendation and hybrid approach. No sentence is left without attribution."
+      },
+      {
+        "name": "Contextual Relevancy",
+        "score": 0.8260869565217391,
+        "passed": true,
+        "reason": "The score is 0.83 because the context mostly addresses the requested local vs VPS tradeoffs with relevant points like \"Maximum Privacy: All data remains on user-controlled hardware,\" \"Lower Latency: Local execution eliminates network round-trips,\" and VPS benefits such as \"24/7 Availability\" and \"Reliability,\" but it also includes some broad or off-target snippets like \"Cloud Deployment Risks:\" as just a heading and \"Docker Container\"/\"Deployment Options\" details that do not directly answer the comparison."
+      },
+      {
+        "name": "Answer Relevancy",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because the response fully addresses the local vs VPS Moltbot tradeoffs requested—covering privacy, latency, uptime, cost, security, and hardware access—with no irrelevant statements."
+      },
+      {
+        "name": "Faithfulness",
+        "score": 0.9642857142857143,
+        "passed": true,
+        "reason": "The score is 0.96 because the actual output slightly overstates the context by presenting the local vs VPS deployment comparison as a complete factor-by-factor comparison in one sentence, even though the context only covers those factors across the discussion rather than explicitly framing them that way."
+      }
+    ]
+  },
+  {
+    "input": "Assess Moltbot's delegated-exec tradeoffs: API-key sprawl, async latency, impersonation risk, and vibe-coded fragility.",
+    "actual_output": "Moltbot’s delegated-exec model offers convenience and autonomy, but the report frames the tradeoff as materially risky:\n\n- **API-key sprawl:** To work properly, users often must configure “dozens and dozens” of API keys and tokens across LLMs, messaging platforms, OAuth services, databases, SSH, and cloud accounts. This increases setup burden and greatly expands the secret-management attack surface. The report also notes plaintext storage of credentials in `~/.moltbot/` with no encryption at rest, making compromise especially easy if file access is obtained.\n\n- **Async latency:** Because Moltbot operates asynchronously, users can experience frustrating delays waiting for task completion, especially on chat platforms like Telegram. The report says users want acknowledgment messages so they know a request was received before long-running processing starts. So the model trades immediacy for delegation, but the UX can feel slow and opaque.\n\n- **Impersonation risk:** Delegating actions through a bot that operates across messaging channels creates a serious impersonation and trust problem. The report highlights concerns that attackers can inject messages or otherwise manipulate the agent into exfiltrating data or executing unwanted actions. In effect, the bot can become a conduit for unauthorized actions while appearing to be a legitimate assistant.\n\n- **“Vibe-coded” fragility:** The report portrays the system as operationally brittle and security-weak, with gaps in authentication, exposed admin panels, unsecured WebSocket endpoints, and poor secret handling. This “works if you keep careful guardrails around it” design is fragile and can degrade into a backdoor-like system if compromised. Security researchers even describe it as lacking directory sandboxing and warn it can behave like “infostealer malware disguised as an AI personal assistant.”\n\n**Bottom line:** Moltbot’s convenience comes at the cost of heavy credential overhead, sluggish async interactions, impersonation/external prompt-injection risk, and a fragile security posture that the report considers unsuitable for insecure or unsupervised deployment.",
+    "success": true,
+    "metrics": [
+      {
+        "name": "Contextual Precision",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because all retrieval context nodes are relevant and they are ranked perfectly: node 1 supports API-key sprawl with \"dozens and dozens of API keys\" and \"comfort managing services on your own infrastructure,\" node 2 supports async latency with \"It’s really hard to wait for an asynchronous bot to get back to you on Telegram,\" node 3 supports impersonation risk via \"Impersonation Concerns\" and acting too much \"on your behalf,\" node 4 supports vibe-coded fragility through \"security concerns in detail,\" \"authentication and access control gaps,\" and credential exposure, and node 5 reinforces the same reliability/security tradeoffs with \"Plaintext Storage,\" \"No Encryption at Rest,\" and \"infostealer malware disguised as an AI personal assistant.\" There are no irrelevant nodes placed above relevant ones, so the ranking is already ideal."
+      },
+      {
+        "name": "Contextual Recall",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because every sentence in the expected output is supported by the retrieval context: sentence 1 is backed by node(s) in retrieval context 1 and 2 for API-key sprawl/setup burden, sentence 2 by node 2 for async latency and delayed acknowledgment, sentence 3 by nodes 2 and 3 for delegation/impersonation risk, sentence 4 by node 2 and 4 for vibe-coded fragility and lack of polish, and sentence 5 by multiple nodes 1, 2, 3, and 5 for the broader capability-versus-risk summary. Great coverage overall."
+      },
+      {
+        "name": "Contextual Relevancy",
+        "score": 0.7906976744186046,
+        "passed": true,
+        "reason": "The score is 0.79 because the context is strongly aligned with delegated-exec tradeoffs: it directly mentions \"LLM API keys (Anthropic, OpenAI, Google),\" \"Asynchronous communication creates frustration,\" and \"Impersonation Concerns,\" which map to API-key sprawl, async latency, and impersonation risk. However, some parts are still only adjacent or broader security commentary, such as \"Internet-Facing Deployments\" and \"prompt injection and manipulation risks,\" so it is relevant but not perfect."
+      },
+      {
+        "name": "Answer Relevancy",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because the response fully addresses Moltbot's delegated-exec tradeoffs and stays tightly focused on API-key sprawl, async latency, impersonation risk, and vibe-coded fragility with no irrelevant content."
+      },
+      {
+        "name": "Faithfulness",
+        "score": 0.9444444444444444,
+        "passed": true,
+        "reason": "The score is 0.94 because the actual output slightly exaggerated the context by saying users set up \"dozens and dozens\" of API keys, while the context only says they reported setting up dozens of API keys and lists specific credential types without that exact wording."
+      }
+    ]
+  },
+  {
+    "input": "What key strengths and weaknesses justify Moltbot's 3.5/5 overall rating?",
+    "actual_output": "Moltbot’s **3.5/5** rating is justified by a mix of standout capabilities and serious practical drawbacks:\n\n### Strengths\n- **Revolutionary autonomous capabilities** — it can proactively execute tasks rather than just suggest actions.\n- **Privacy-first local architecture** — self-hosting keeps data under user control.\n- **Extensible open-source ecosystem** — flexible for developers to modify and build on.\n- **Active community and development** — strong momentum and ongoing improvements.\n- **Multi-platform messaging integration** — works across several messaging channels.\n- **Cost-effective vs. commercial alternatives** — attractive for users who want powerful automation without subscription costs.\n\n### Weaknesses\n- **Serious security vulnerabilities** — major concern, especially for enterprise or sensitive use.\n- **High technical complexity** — difficult to install, configure, and maintain.\n- **Immature codebase quality** — still rough and not fully polished.\n- **Significant setup burden** — requires substantial time and expertise to get working.\n- **Limited documentation consistency** — onboarding and troubleshooting are harder than they should be.\n- **No commercial support available** — users are on their own if problems arise.\n\nIn short, Moltbot is powerful and innovative, but its **security risks, complexity, and lack of support** prevent it from rating higher.",
+    "success": true,
+    "metrics": [
+      {
+        "name": "Contextual Precision",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because the retrieval contexts are perfectly ordered: the first node in retrieval contexts directly supports the rating with “103,000 stars within three months” and “proactive automation, multi-channel messaging integration, and local-first architecture,” and the second node in retrieval contexts immediately confirms the core balance with “Overall Rating: 3.5/5” plus strengths like “Revolutionary autonomous capabilities” and weaknesses like “Serious security vulnerabilities” and “High technical complexity.” The remaining nodes in retrieval contexts stay relevant by reinforcing the same tradeoffs with “Data Liberation,” “backlash focusing on security risks, complexity, and ‘vibe-coded’ implementation quality,” “No official commercial support available,” and “setup complexity far exceeds managed alternatives,” so there are no irrelevant nodes ranked above relevant ones."
+      },
+      {
+        "name": "Contextual Recall",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because every sentence in the expected output is covered by the retrieval context: sentence 1 is matched by node(s) in retrieval context 1 and 2 via the 3.5/5 rating plus strengths/weaknesses framing, sentences 2–5 are supported by node(s) 1 and 2 through the listed capabilities, privacy, open-source ecosystem, messaging integration, and cost-effectiveness, sentence 6 is backed by node(s) 1 and 3 through the 103,000+ GitHub stars, and sentence 7 is fully supported by node(s) 1, 2, and 4 through the security, complexity, documentation, support, and production-readiness concerns."
+      },
+      {
+        "name": "Contextual Relevancy",
+        "score": 0.7272727272727273,
+        "passed": true,
+        "reason": "The score is 0.73 because the context directly answers the rating question with clear support: it lists the overall rating as \"Overall Rating: 3.5/5\" plus explicit \"Strengths: Revolutionary autonomous capabilities; Privacy-first local architecture; Extensible open-source ecosystem...\" and \"Weaknesses: Serious security vulnerabilities; High technical complexity; Immature codebase quality...\". However, some retrieved content is still irrelevant metadata or tangential, such as \"Report Date: January 31, 2026\" and \"Prepared for: Technical Review and Strategic Assessment,\" which keeps it from being a perfect match."
+      },
+      {
+        "name": "Answer Relevancy",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because the response would be fully relevant to Moltbot’s strengths and weaknesses and directly address the 3.5/5 rating without any irrelevant content. Great job keeping it on target!"
+      },
+      {
+        "name": "Faithfulness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, so the response appears fully faithful and well aligned."
+      }
+    ]
+  },
+  {
+    "input": "Assess OpenClaw's niche agentic workflows across shell, browser, email, calendar, FS, and 50+ integrations.",
+    "actual_output": "OpenClaw’s niche is **stateful, proactive, multi-channel agentic automation** for technically sophisticated users who want more than a chat assistant.\n\n### What it does well across workflows\n\n- **Shell / terminal:**  \n  Can execute shell commands, run/debug code iteratively, and handle real system operations. This makes it strong for development, ops, and local automation tasks.\n\n- **Browser automation:**  \n  Supports browser control for scraping and web interaction, enabling tasks like form filling, site monitoring, and data extraction.\n\n- **Email:**  \n  Can send and manage emails across multiple accounts, which is useful for inbox triage, prioritization, and automation-heavy communication workflows.\n\n- **Calendar:**  \n  Manages calendars and scheduled reminders, supporting proactive scheduling, check-ins, and event-based automation.\n\n- **Filesystem:**  \n  Reads, writes, and organizes local files, so it can act as a practical workspace assistant for notes, documents, configs, and project files.\n\n- **50+ third-party integrations:**  \n  Connects to many external services, which broadens its workflow reach into productivity, development, finance, smart home, and content domains.\n\n### Why this is distinctive\n\nThe report frames OpenClaw as a **paradigm shift from reactive assistants** because it can:\n\n- remember prior interactions and project state,\n- operate continuously with persistent context,\n- send reminders or briefings without being prompted,\n- coordinate across multiple channels and services,\n- and support more advanced multi-agent setups.\n\n### Best-fit use cases\n\nAccording to the knowledge base, OpenClaw is especially strong for:\n\n- **developer workflows**: code fixing, CI/CD monitoring, review automation\n- **productivity automation**: email/calendar/task coordination\n- **multi-agent collaboration**: one agent monitors email, another handles calendar, another coordinates\n\n### Overall assessment\n\nOpenClaw’s niche is not general-purpose conversation; it is **action-oriented orchestration** across shell, browser, email, calendar, filesystem, and integrations. Its value comes from combining:\n\n- **persistent memory**\n- **proactive behavior**\n- **broad tool access**\n- **open extensibility via 565+ community skills**\n\nThe report suggests it is best suited for users comfortable with **self-hosting, automation, and security management**, since its power comes with meaningful operational and security risks.",
+    "success": false,
+    "metrics": [
+      {
+        "name": "Contextual Precision",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because the relevant nodes in retrieval contexts are ranked first through fourth, and they directly support the requested niche workflows with quotes like 'Execute shell commands and terminal operations', 'Control browser automation for web scraping and interaction', 'Send and manage emails across multiple accounts', 'Manage calendars and send automated reminders', 'Read, write, and organize local filesystem operations', and 'Integrate with 50+ third-party services and platforms'. The irrelevant nodes are already placed lower at ranks 5 and 6, where they focus on 'ecosystem/adoption and risks' and 'Competitors offer single-channel access'/'Device-Level Capabilities' instead of the specific workflow capabilities, so the ranking is fully aligned and cannot be higher."
+      },
+      {
+        "name": "Contextual Recall",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because every sentence in the expected output is fully supported by node(s) in retrieval context: sentence 1 is covered by node 1 (shell/terminal, browser, email, calendar, filesystem, integrations, and code workflows); sentence 2 is supported by nodes 2 and 4 (privacy-first/self-hosting and technical-user suitability); and sentence 3 is supported by node 4 (security risks, immature security posture, and suitability for technical users)."
+      },
+      {
+        "name": "Contextual Relevancy",
+        "score": 0.4406779661016949,
+        "passed": false,
+        "reason": "The score is 0.44 because the context does include some directly relevant capabilities like \"Execute shell commands and terminal operations,\" \"Control browser automation for web scraping and interaction,\" \"Send and manage emails across multiple accounts,\" \"Read, write, and organize local filesystem operations,\" and \"Integrate with 50+ third-party services and platforms.\" However, much of it is still off-target or only loosely related, such as \"1.4 Second Rename to OpenClaw,\" \"proactive capabilities and reactive assistants,\" and generic community or security notes, so it only partially matches the input about assessing OpenClaw's niche agentic workflows."
+      },
+      {
+        "name": "Answer Relevancy",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because the response fully addressed the request and included no irrelevant statements. It directly assessed OpenClaw's niche agentic workflows across the specified surfaces and integrations, so there was nothing to deduct."
+      },
+      {
+        "name": "Faithfulness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because there are no contradictions; the actual output aligns cleanly with the retrieval context. Great job keeping it fully faithful!"
+      }
+    ]
+  },
+  {
+    "input": "Assess Moltbot's viability for self-hosted power users vs regulated enterprises with SSO/RBAC needs.",
+    "actual_output": "According to the report, **Moltbot is viable for self-hosted power users, but not a good fit for regulated enterprises needing SSO/RBAC**.\n\n### For self-hosted power users\nMoltbot is positioned as a strong option for:\n- Developers and technical professionals comfortable with self-hosting\n- Privacy-conscious users handling sensitive personal or business data\n- Power users needing deep system integration and customization\n- Researchers exploring agentic AI systems\n\nWhy it works for them:\n- **Local-first / self-hosted architecture**\n- **Extensible open-source ecosystem**\n- **Cost-effective compared with commercial alternatives**\n- **Transformative automation capabilities** for technically capable users\n\nBut it still comes with clear tradeoffs:\n- Significant setup burden\n- Immature codebase and rough edges\n- Serious security responsibilities\n- Need to manage credential rotation, backups, audit logging, and incident response manually\n\nSo for power users, the report frames Moltbot as **promising and useful if they can accept operational complexity and security ownership**.\n\n### For regulated enterprises with SSO/RBAC needs\nThe report is much more negative here. It says that:\n- **Production deployment of the current version carries significant risk that most organizations should not accept**\n- It is unsuitable for **regulated industries without dedicated security expertise**\n- It is not appropriate for organizations unable to accept **experimental software risks**\n\nSecurity and governance concerns cited include:\n- Exposed internet-facing instances\n- Credential management vulnerabilities\n- Authentication and access control gaps\n- Need for formal approval workflows, incident procedures, and compliance validation\n\nThat implies Moltbot currently lacks the maturity expected for enterprise use cases such as:\n- **SSO integration**\n- **Role-based access control**\n- Strong centralized governance\n- Compliance-ready controls\n\n### Bottom line\n- **Self-hosted power users:** viable, especially if they have technical skill and are willing to manage security themselves.\n- **Regulated enterprises with SSO/RBAC requirements:** **not viable for production today**, based on the report’s risk assessment.\n\nIf you want, I can turn this into a **one-paragraph executive summary** or a **decision matrix**.",
+    "success": true,
+    "metrics": [
+      {
+        "name": "Contextual Precision",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because all retrieval context nodes are relevant and already ranked well: node 1 quotes Moltbot as being for \"Developers and technical professionals comfortable with self-hosting\" and \"Power users requiring deep system integration and customization,\" node 2 says \"Regulated industries without dedicated security expertise\" should not consider it, node 3 notes \"Implement file integrity monitoring\" and \"Enable comprehensive audit logging,\" node 4 warns of \"Authentication and Access Control Gaps\" and internet-facing exposure, and node 5 says \"For Individual Users\" it is transformative while \"production deployment\" carries significant risk. Since there are no irrelevant nodes above the relevant ones, the precision is perfect."
+      },
+      {
+        "name": "Contextual Recall",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because every sentence in the expected output is supported by the retrieval context: sentence 1 matches node 1 and node 5 on Moltbot being better for technically capable self-hosters than regulated enterprises; sentences 2-4 are backed by node 5, node 2, node 1, and node 4 on privacy-first architecture, setup/security burden, serious security risks, and access-control gaps; sentence 5 aligns with node 2 and node 1 noting audit logging and other enterprise controls are only eventual or speculative. Great recall!"
+      },
+      {
+        "name": "Contextual Relevancy",
+        "score": 0.7719298245614035,
+        "passed": true,
+        "reason": "The score is 0.77 because the context does address the core comparison: it says Moltbot is for \"Developers and technical professionals comfortable with self-hosting\" and \"Power users requiring deep system integration and customization,\" while also warning that \"production deployment of current version carries significant risk\" and that it has \"Authentication and Access Control Gaps\" and \"No commercial support available.\" However, parts of the context remain generic or tangential, like \"Documented approval workflows for sensitive operations\" and \"Regular security training for users,\" so it is relevant but not perfectly targeted to SSO/RBAC-heavy enterprise needs."
+      },
+      {
+        "name": "Answer Relevancy",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because the response stays fully focused on assessing Moltbot’s viability for self-hosted power users versus regulated enterprises with SSO/RBAC needs, with no irrelevant content."
+      },
+      {
+        "name": "Faithfulness",
+        "score": 0.9629629629629629,
+        "passed": true,
+        "reason": "The score is 0.96 because the actual output overgeneralizes Moltbot’s limitations by implying it is unsuitable for all regulated industries, while the context only says it is not suitable without dedicated security expertise."
+      }
+    ]
+  },
+  {
+    "input": "Compare Moltbot's plaintext credential storage with encrypted secret managers' at-rest protection.",
+    "actual_output": "Moltbot’s credential storage is much weaker than encrypted secret managers’ at-rest protection.\n\n- **Moltbot:** Stores secrets in **plaintext JSON and Markdown files** under `~/.moltbot/`. The report says it uses **no encryption at rest**, so anyone or anything with filesystem read access can directly recover API keys, tokens, passwords, certificates, and other secrets.\n- **Encrypted secret managers:** Protect secrets with **encryption at rest**, meaning the stored data is not directly readable even if the underlying files or storage are accessed. Secrets are typically decrypted only in memory, after authorization and often with additional access controls.\n\n### Practical difference\n- In Moltbot, compromise of the host, a local process, or exposed files can lead to **immediate secret exposure**.\n- In an encrypted secret manager, compromise of storage alone is **not enough**; an attacker would still need the decryption keys and proper authorization.\n\n### Reported risk implication\nThe report frames Moltbot’s design as especially dangerous because it makes credentials **trivially extractable**, unlike password managers or enterprise secret systems that are built specifically to reduce exposure through encryption and access control.",
+    "success": false,
+    "metrics": [
+      {
+        "name": "Contextual Precision",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because the retrieval contexts are perfectly ordered with all relevant nodes in the top ranks: node 1 directly says Moltbot stores credentials in plaintext JSON and Markdown files with \"No Encryption at Rest,\" node 2 adds that it \"implements no encryption for stored credentials,\" and the later nodes continue reinforcing the same point. There are no irrelevant nodes above any relevant ones, so nothing needs to be ranked lower, and the relevant nodes are already ranked exactly where they should be."
+      },
+      {
+        "name": "Contextual Recall",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because both sentences are fully supported by node(s) in retrieval context: sentence 1 is directly backed by node 1 and node 3 describing plaintext JSON/Markdown storage under `~/.moltbot/`, listed secret types, and no encryption at rest; sentence 2 is also supported by node 1 and node 3 stating that encrypted secret managers protect secrets at rest and are not readable without decryption or authorized access. Great recall overall."
+      },
+      {
+        "name": "Contextual Relevancy",
+        "score": 0.3617021276595745,
+        "passed": false,
+        "reason": "The score is 0.36 because the context does include the key comparison points — Moltbot has \"Plaintext Storage\" in \"plaintext JSON and Markdown files\" and \"implements no encryption for stored credentials,\" which contrasts with secret managers' at-rest protection — but much of the rest is off-topic, such as \"unauthenticated administrative access exposed to the internet\" and \"No Sandboxing,\" which do not address credential storage or encryption at rest."
+      },
+      {
+        "name": "Answer Relevancy",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because the response stays fully focused on comparing Moltbot's plaintext credential storage with encrypted secret managers' at-rest protection, with no irrelevant statements."
+      },
+      {
+        "name": "Faithfulness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "The score is 1.00 because there are no contradictions, so the actual output appears fully aligned with the retrieval context. Great job staying faithful!"
+      }
+    ]
+  }
+]
