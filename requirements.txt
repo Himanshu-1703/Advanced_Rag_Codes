@@ -1,0 +1,9 @@
+langchain
+langchain-openai
+langchain-cohere
+langchain-community
+langchain-chroma
+flashrank
+python-dotenv
+ipykernel
+protobuf>=3.20.0,<4.0.0
